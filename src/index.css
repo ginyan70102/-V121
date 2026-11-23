@@ -1,0 +1,263 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: "Plus Jakarta Sans", "Noto Sans TC", system-ui, sans-serif;
+    --font-sans: "Noto Sans TC", "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================================
+ * Commercial Executive Cobalt & Brushed Metal Interactive Controls
+ * ============================================================================ */
+
+/* 主按鈕：陽極氧化皇室鈷藍金屬質感（帶頂部高光倒角與底部壓紋陰影） */
+.btn-metal-primary {
+  background-image: linear-gradient(
+    180deg,
+    #3b82f6 0%,
+    #1d55b8 46%,
+    #133d8b 54%,
+    #194da8 100%
+  );
+  border: 1px solid #0e2f6c;
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 -1px 1px rgba(4, 18, 48, 0.45),
+    0 2px 5px rgba(9, 28, 66, 0.28),
+    0 1px 2px rgba(9, 28, 66, 0.2);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-metal-primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 1px rgba(4, 18, 48, 0.45),
+    0 4px 10px rgba(15, 52, 118, 0.36);
+}
+
+.btn-metal-primary:active:not(:disabled) {
+  transform: translateY(0.5px);
+  filter: brightness(0.96);
+  box-shadow:
+    inset 0 2px 4px rgba(5, 19, 50, 0.45),
+    0 1px 2px rgba(9, 28, 66, 0.22);
+}
+
+/* 次要按鈕：拉絲鈦銀合金質感（淺色模式為冷銀拉絲，深色模式為深鈦灰藍金屬） */
+.btn-metal-silver {
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #eef3fa 48%,
+    #dce5f2 54%,
+    #ebf1f9 100%
+  );
+  border: 1px solid #b5c6dc;
+  color: #0f294d;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 -1px 0 rgba(148, 169, 198, 0.45),
+    0 1px 3px rgba(15, 39, 77, 0.12);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-metal-silver:hover:not(:disabled) {
+  border-color: #7ea3d4;
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f3f7fd 48%,
+    #e2ecf8 54%,
+    #f0f5fc 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    0 2px 6px rgba(15, 45, 92, 0.16);
+}
+
+.btn-metal-silver:active:not(:disabled) {
+  transform: translateY(0.5px);
+  box-shadow: inset 0 2px 3px rgba(15, 41, 77, 0.18);
+}
+
+.dark .btn-metal-silver {
+  background-image: linear-gradient(
+    180deg,
+    #243b5e 0%,
+    #182a46 48%,
+    #112038 54%,
+    #192d4a 100%
+  );
+  border: 1px solid #35527d;
+  color: #e6f0ff;
+  box-shadow:
+    inset 0 1px 0 rgba(186, 214, 255, 0.22),
+    inset 0 -1px 1px rgba(3, 10, 24, 0.65),
+    0 2px 5px rgba(2, 8, 20, 0.42);
+}
+
+.dark .btn-metal-silver:hover:not(:disabled) {
+  border-color: #60a5fa;
+  filter: brightness(1.12);
+}
+
+/* 尊榮安裝按鈕：深海藍金邊金屬質感（用於 PWA 安裝到手機） */
+.btn-metal-install {
+  background-image: linear-gradient(
+    180deg,
+    #1e5cb8 0%,
+    #0f3b80 48%,
+    #0a2b61 54%,
+    #12418a 100%
+  );
+  border: 1px solid #60a5fa;
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(191, 219, 254, 0.48),
+    inset 0 -1px 1px rgba(4, 15, 38, 0.55),
+    0 2px 8px rgba(10, 35, 78, 0.34);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-metal-install:hover:not(:disabled) {
+  filter: brightness(1.1);
+  box-shadow:
+    inset 0 1px 0 rgba(219, 234, 254, 0.62),
+    0 4px 12px rgba(15, 59, 128, 0.44);
+}
+
+.btn-metal-install:active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+
+/* 選中態金屬分段控制鈕 */
+.btn-metal-segment-active {
+  background-image: linear-gradient(
+    180deg,
+    #2c6cd4 0%,
+    #16479c 50%,
+    #123c86 100%
+  );
+  border: 1px solid #0f3272;
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    0 1px 3px rgba(10, 32, 74, 0.26);
+}
+
+/* 商業版拉絲金屬磨砂玻璃面板（微粒雜訊紋理 + 拉絲光澤漸層，兼顧深藍底圖高對比） */
+.executive-card {
+  background-color: #f4f8fe;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.038'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.14) 0px,
+      rgba(255, 255, 255, 0.14) 1px,
+      rgba(15, 45, 92, 0.014) 1px,
+      rgba(15, 45, 92, 0.014) 2px
+    ),
+    linear-gradient(
+      122deg,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(255, 255, 255, 0.08) 34%,
+      rgba(219, 234, 254, 0.24) 64%,
+      rgba(255, 255, 255, 0.42) 100%
+    ),
+    linear-gradient(
+      165deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(244, 248, 254, 0.95) 48%,
+      rgba(232, 240, 252, 0.94) 100%
+    );
+  background-size: 160px 160px, 100% 4px, 100% 100%, 100% 100%;
+  border: 1px solid rgba(214, 230, 250, 0.92);
+  box-shadow:
+    0 14px 36px rgba(4, 16, 40, 0.34),
+    0 2px 6px rgba(4, 16, 40, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    inset 0 -1px 0 rgba(148, 179, 219, 0.48);
+  backdrop-filter: blur(14px);
+}
+
+.dark .executive-card {
+  background-color: #0b1931;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.055'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(
+      0deg,
+      rgba(191, 219, 254, 0.028) 0px,
+      rgba(191, 219, 254, 0.028) 1px,
+      rgba(2, 8, 22, 0.06) 1px,
+      rgba(2, 8, 22, 0.06) 2px
+    ),
+    linear-gradient(
+      122deg,
+      rgba(147, 197, 253, 0.13) 0%,
+      rgba(147, 197, 253, 0.01) 36%,
+      rgba(56, 189, 248, 0.06) 68%,
+      rgba(191, 219, 254, 0.1) 100%
+    ),
+    linear-gradient(
+      165deg,
+      rgba(18, 38, 70, 0.95) 0%,
+      rgba(11, 25, 49, 0.94) 50%,
+      rgba(7, 18, 36, 0.96) 100%
+    );
+  background-size: 160px 160px, 100% 4px, 100% 100%, 100% 100%;
+  border: 1px solid rgba(96, 152, 224, 0.48);
+  box-shadow:
+    0 16px 40px rgba(2, 7, 20, 0.62),
+    0 2px 8px rgba(2, 7, 20, 0.4),
+    inset 0 1px 0 rgba(191, 219, 254, 0.28),
+    inset 0 -1px 0 rgba(2, 8, 22, 0.72);
+  backdrop-filter: blur(14px);
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .executive-card {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border-color: #cbd5e1 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

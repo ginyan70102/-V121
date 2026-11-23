@@ -1,0 +1,8 @@
+{
+  "name": "臺東差勤通",
+  "description": "臺東縣政府員工出差天數、線上差勤系統應申報起訖時間、V121 假日路程補休與分段車資試算工具（100% 離線運作）。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
